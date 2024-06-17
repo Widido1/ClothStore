@@ -5,3 +5,16 @@
 Image {
   width: 600px;
 }
+
+.theme1{
+  background-color: rgb(248, 202, 142);
+  color: rgb(97, 44, 0);
+}
+.theme2{
+  background-color: rgb(97, 44, 0);
+  color: rgb(248, 202, 142);
+}
+
+body{
+  background-color:rgb(54, 18, 9);
+}

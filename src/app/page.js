@@ -1,7 +1,23 @@
+import { prisma } from "@/libs/prisma"
 import ProductBox from "./components/productbox"
+import Banner from "./components/banner";
 
-export default function HomePage(){
+async function loadProducts(){
+  return await prisma.product.findMany();
+}
+
+export default async function HomePage(){
+  const products = await loadProducts();
+  
   return(
-    <ProductBox/>
+    <div>
+      <Banner/>
+      <div className="container grid grid-cols-3 gap-1 self-center mx-auto" >
+        {products.map(product => (
+          <ProductBox key={product.id} name={product.name} img={product.img} des={product.description}/>
+        ))}
+      </div>
+    </div>
+
   )
 }

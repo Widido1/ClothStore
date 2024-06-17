@@ -1,24 +1,30 @@
 "use client";
 import Image from "next/image";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 export default function ProductBox(props) {
-    const [pName, setpName] = useState("default");
-    const [pImg, setpImg] = useState("default");
+    const [pName, setpName] = useState(props.name);
+    const [pImg, setpImg] = useState(props.img);
+
+    useEffect(()=>{
+        setpName(props.name);
+        setpImg(props.img);
+    },[props]);
+
 
     return(
-        <div className="flex-col justify-items-center text-center w-1/4 content-center bg-gray-700 text-gray-100">
-            <h1>Product Name</h1>
-            <div className="w-11/12 align-middle m-auto p-0">
+        <div className="flex-col justify-items-center text-center content-center space-y-10 rounded-md theme1">
+            <h1 className="font-bold text-lg italic">{pName}</h1>
+            <div className="w-11/12 align-middle p-0">
                 <Image 
-                    src="https://i.pinimg.com/564x/39/37/f8/3937f80efde8846a96163054b0800838.jpg"
+                    src={pImg}
                     alt="buzo selección"
                     width={300}
                     height={300}
-                    className="max-h-50 max-w-32"
+                    className="h-1/2 w-1/2 mx-auto rounded-md"
                 />
             </div>
-            <p>Product text for the ProductBox component</p>
+            <p>{props.des}</p>
         </div>
     );
 }
