@@ -29,6 +29,7 @@ export default function ProductForm(props){
             }
         });
         const data = await res.json();
+        console.log(data);
     }
 
     return(
