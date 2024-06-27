@@ -17,5 +17,7 @@ export async function POST(request){
             img
         }
     });
+    console.log("the post is: " );
+    console.log(NextResponse.json(newProduct));
     return NextResponse.json(newProduct);
 }
