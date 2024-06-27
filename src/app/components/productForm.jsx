@@ -1,29 +1,76 @@
 "use client";
 
-export default function ProductForm(){
+import Image from "next/image";
+import { useState } from "react";
+
+const imageStyle = {
+    borderRadius: "25%",
+    width: "275px",
+    height: "275px",
+    border: "3px solid #612c00"
+
+}
+
+export default function ProductForm(props){
+    const onSubmit = async(e) => {
+        e.preventDefault();
+        console.log(e);
+        const name = e.target.name.value;
+        const description = e.target.description.value;
+        const img = e.target.img.value;
+        const stock = e.target.stock.value;
+        const price = e.target.price.value;
+
+        const res = await fetch("/api/products", {
+            method: "POST",
+            body: JSON.stringify({name, price, stock, description, img}),
+            headers: {
+                "Content-Type": "application/json"
+            }
+        });
+        const data = await res.json();
+    }
 
     return(
-        <div className="h-screen">
-            <div className="container grid grid-cols-1 w-3/4 justify-self-center p-6 mx-auto my-20 h-3/4 text-center rounded-md theme1"  >
-                <div className="w-2/4 mx-auto theme2 h-10 rounded-md py-1">
-                    <h1 className="text-size">Name of the product</h1>
-                </div>
-                <div>
-                    <input placeholder="Enter the name of the product here..." className="w-3/4 mx-auto h-10 p-2 grid place-items-start rounded-md"/>
-                </div>
-                <div className="w-2/4 mx-auto theme2 h-10 rounded-md py-1">
-                    <h1>Image of the product</h1>
-                </div>
-                <div>
-                    <textarea type="url" placeholder="Enter the link of the image here..." className="w-3/4 mx-auto h-24 p-2 rounded-md"></textarea>
-                </div>
-                <div className="w-2/4 mx-auto theme2 h-10 rounded-md py-1">
-                    <h1>Description of the product</h1>
-                </div>
-                <div>
-                    <textarea type="text" placeholder="Write the description here..." className="w-3/4 mx-auto p-2 h-36 rounded-md"></textarea>
-                </div>
+        <div className="h-screen" >
+            <div className="grid content-center text-center justify-items-center h-24 p-auto theme3 text-4xl">
+                <h1>Enter the new product information</h1>
             </div>
+            <form className="container grid grid-cols-1 w-3/4 justify-self-center p-6 mx-auto my-6 h-3/4 text-center rounded-md theme1" onSubmit={onSubmit}>
+                <div className="container grid grid-cols-2">
+                    <div className="container grid gap-8 h-3/4">
+                        <div>
+                            <label className="theme1 text-2xl font-bold block" htmlFor="name">Set Name:</label>
+                            <input id="name" placeholder="enter name" className="w-3/4 mx-auto p-2 h-8 rounded-md"/>
+                        </div>
+                        <div>
+                            <label className="theme1 text-2xl font-bold block" htmlFor="price">Set Price:</label>
+                            <input id="price" placeholder="enter price" className="w-3/4 mx-auto p-2 h-8 rounded-md"/>
+                        </div>
+                        <div>
+                            <label className="theme1 text-2xl font-bold block" htmlFor="stock">Set Stock:</label>
+                            <input id="stock" placeholder="stock available" className="w-3/4 mx-auto p-2 h-8 rounded-md"/>
+                        </div>
+                        <div>
+                            <label className="theme1 text-2xl font-bold block" id="description">Set Description:</label>
+                            <textarea id="description" type="text" placeholder="Write the description here..." className="w-3/4 mx-auto p-2 h-36 rounded-md"></textarea>
+                        </div>
+
+                    </div>
+
+                    <div className="container grid h-3/4">
+                        <label className="theme1 text-2xl font-bold" htmlFor="img">Set Image URL:</label>
+                        <textarea id="img" type="url" placeholder="Enter the link of the image here..." className="w-3/4 mx-auto h-24 p-2 rounded-md"></textarea>
+                        <label className="theme1 text-2xl font-bold">Preview:</label>
+                    </div>
+                </div>
+
+
+                <div className="grid grid-cols-2">
+                    <button type="submit" className="w-3/4 mx-auto theme2 h-10 rounded-md py-1">Submit</button>
+                    <button className="w-3/4 mx-auto theme2 h-10 rounded-md py-1">Cancel</button>
+                </div>
+            </form>
         </div>
     );
 }

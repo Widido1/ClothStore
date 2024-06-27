@@ -11,7 +11,7 @@ export default async function HomePage(){
   
   return(
     <div>
-      <Banner/>
+       <Banner />
       <div className="container grid grid-cols-3 gap-1 self-center mx-auto" >
         {products.map(product => (
           <ProductBox key={product.id} name={product.name} img={product.img} des={product.description} price={product.price}/>
