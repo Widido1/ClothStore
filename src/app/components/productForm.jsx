@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import { useState } from "react";
+import { useRouter } from "next/router";
 
 const imageStyle = {
     borderRadius: "25%",
@@ -21,7 +22,7 @@ export default function ProductForm(props){
         const stock = e.target.stock.value;
         const price = e.target.price.value;
 
-        const res = await fetch("/api/products", {
+        const res = await fetch("/api/products/", {
             method: "POST",
             body: JSON.stringify({name, price, stock, description, img}),
             headers: {
@@ -30,6 +31,8 @@ export default function ProductForm(props){
         });
         const data = await res.json();
         console.log(data);
+
+        Router.push("/")
     }
 
     return(
@@ -68,7 +71,7 @@ export default function ProductForm(props){
 
 
                 <div className="grid grid-cols-2">
-                    <button type="submit" className="w-3/4 mx-auto theme2 h-10 rounded-md py-1">Submit</button>
+                    <button className="w-3/4 mx-auto theme2 h-10 rounded-md py-1">Submit</button>
                     <button className="w-3/4 mx-auto theme2 h-10 rounded-md py-1">Cancel</button>
                 </div>
             </form>
