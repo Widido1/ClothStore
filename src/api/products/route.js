@@ -8,6 +8,7 @@ export async function GET(){
 
 export async function POST(request){
     const {name, price, stock, description, img} = await request.json();
+    console.log(name + ", " + price + ", " + stock + ", " + description + ", " + img);
     const newProduct = await prisma.product.create({
         data:{
             name,
@@ -19,5 +20,7 @@ export async function POST(request){
     });
     console.log("the post is: " );
     console.log(NextResponse.json(newProduct));
-    return NextResponse.json(newProduct);
+    return (
+        NextResponse.json(newProduct)
+    );
 }

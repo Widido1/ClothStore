@@ -22,17 +22,16 @@ export default function ProductForm(props){
         const stock = e.target.stock.value;
         const price = e.target.price.value;
 
-        const res = await fetch("/api/products/", {
+        const res = await fetch("/", {
             method: "POST",
             body: JSON.stringify({name, price, stock, description, img}),
             headers: {
                 "Content-Type": "application/json"
             }
         });
+        console.log(res);
         const data = await res.json();
-        console.log(data);
-
-        Router.push("/")
+        return data
     }
 
     return(
