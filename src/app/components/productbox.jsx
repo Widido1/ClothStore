@@ -34,7 +34,6 @@ export default function ProductBox(props) {
                     height={300}
                     className="h-1/2 w-1/2 mx-auto rounded-md"
                     //fill={true}
-                    objectFit="cover"
                     style={imageStyle}
                 />
                 <p className="font-bold text-md">{props.des}</p>

@@ -3,6 +3,7 @@
 import Image from "next/image";
 import { useState } from "react";
 import { useRouter } from "next/router";
+import { GET, P } from "@/api/products/route";
 
 const imageStyle = {
     borderRadius: "25%",
@@ -15,14 +16,17 @@ const imageStyle = {
 export default function ProductForm(props){
     const onSubmit = async(e) => {
         e.preventDefault();
+        console.log("Inicio del response del productForm");
         console.log(e);
         const name = e.target.name.value;
         const description = e.target.description.value;
         const img = e.target.img.value;
         const stock = e.target.stock.value;
         const price = e.target.price.value;
+        const available = true;
+        console.log(name +", "+ price +", "+ stock +", "+ description +", "+ img);
 
-        const res = await fetch("/", {
+        const res = await fetch("/api/products/", {
             method: "POST",
             body: JSON.stringify({name, price, stock, description, img}),
             headers: {
@@ -31,7 +35,9 @@ export default function ProductForm(props){
         });
         console.log(res);
         const data = await res.json();
-        return data
+        console.log(data);
+        console.log("Fin del response del productForm");
+        return data;
     }
 
     return(
@@ -70,7 +76,7 @@ export default function ProductForm(props){
 
 
                 <div className="grid grid-cols-2">
-                    <button className="w-3/4 mx-auto theme2 h-10 rounded-md py-1">Submit</button>
+                    <button type="submit" className="w-3/4 mx-auto theme2 h-10 rounded-md py-1">Submit</button>
                     <button className="w-3/4 mx-auto theme2 h-10 rounded-md py-1">Cancel</button>
                 </div>
             </form>

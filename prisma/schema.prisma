@@ -13,9 +13,9 @@ datasource db {
 model Product {
   id String @id @default(uuid())
   name String
-  price String
-  stock Int
-  description String
-  available Boolean @default(true)
-  img String
+  price String? @default("100$")
+  stock Int? @default(1)
+  description String?
+  available Boolean? @default(true)
+  img String? @default("https://i.pinimg.com/564x/37/08/99/3708994bdca38cd8dbea509f233f3cf4.jpg")
 }
