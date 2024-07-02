@@ -26,7 +26,7 @@ export default function ProductForm(props){
         const available = true;
         console.log(name +", "+ price +", "+ stock +", "+ description +", "+ img);
 
-        const res = await fetch("../api/products/route", {
+        const res = await fetch("/api/products/route", {
             method: "POST",
             body: JSON.stringify({name, price, stock, description, img, available}),
             headers: {
