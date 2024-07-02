@@ -3,7 +3,7 @@
 import Image from "next/image";
 import { useState } from "react";
 import { useRouter } from "next/router";
-import { GET, P } from "@/api/products/route";
+import { GET, POST } from "../api/products/route";
 
 const imageStyle = {
     borderRadius: "25%",
@@ -26,9 +26,9 @@ export default function ProductForm(props){
         const available = true;
         console.log(name +", "+ price +", "+ stock +", "+ description +", "+ img);
 
-        const res = await fetch("/api/products/", {
+        const res = await fetch("../api/products/route", {
             method: "POST",
-            body: JSON.stringify({name, price, stock, description, img}),
+            body: JSON.stringify({name, price, stock, description, img, available}),
             headers: {
                 "Content-Type": "application/json"
             }

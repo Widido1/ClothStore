@@ -9,18 +9,15 @@ export async function GET(){
 export async function POST(request){
     console.log("Inicio del POST");
     const {name, price, stock, description, img} = await request.json();
-    console.log(name + ", " + price + ", " + stock + ", " + description + ", " + img);
     const newProduct = await prisma.product.create({
         data:{
             name,
             price,
             stock,
             description,
-            img
+            img,
+            available
         }
     });
-    console.log("the post is: " );
-    console.log(NextResponse.json(newProduct));
-    console.log("Fin del POST");
     return NextResponse.json(newProduct);
 }
