@@ -3,7 +3,8 @@ import ProductBox from "./components/productbox"
 import Banner from "./components/banner";
 
 async function loadProducts(){
-  return await prisma.product.findMany();
+  const allProducts = await prisma.product.findMany();
+  return allProducts;
 }
 
 export default async function HomePage(){
