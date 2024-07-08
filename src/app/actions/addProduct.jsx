@@ -13,12 +13,12 @@ export default async function addProduct(formData){
     console.log(name + ", " + description + ", " + img + ", " + stock + ", " + price + ", " + available);
     await prisma.product.create({
         data: {
-            name: toString(name),
-            description: toString(description),
-            img: toString(img),
+            name: name,
+            description: description,
+            img: img,
             stock: Number(stock),
-            price: toString(price),
-            available: (available),
+            price: price,
+            available: available,
         }
     });
     revalidatePath("/app/page");
