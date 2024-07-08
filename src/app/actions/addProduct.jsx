@@ -22,9 +22,4 @@ export default async function addProduct(formData){
         }
     });
     revalidatePath("/app/page");
-    //console.log(name +", "+ price +", "+ stock +", "+ description +", "+ img);
-    //const data = getData(name, price, stock, description, img, available);
-    //console.log(data);
-    //console.log("Fin del response del productForm");
-    //return data;
 }

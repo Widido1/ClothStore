@@ -1,15 +1,20 @@
 "use client"
 import addProduct from "../actions/addProduct";
+import { useRouter } from "next/navigation";
 
 export default function Form() {
+    const router = useRouter();
     return(
         <div className="h-screen" >
             <div className="grid content-center text-center justify-items-center h-24 p-auto theme3 text-4xl">
                 <h1>Enter the new product information</h1>
             </div>
-            <form className="container grid grid-cols-1 w-3/4 justify-self-center p-6 mx-auto my-6 h-3/4 text-center rounded-md theme1" action={async formData =>{
-                await addProduct(formData)
-                }}>
+            <form className="container grid grid-cols-1 w-3/4 justify-self-center p-6 mx-auto my-6 h-3/4 text-center rounded-md theme1" action={
+                async formData =>{
+                    await addProduct(formData);
+                    router.push("/");
+                }}
+            >
                 <div className="container grid grid-cols-2">
                     <div className="container grid gap-8 h-3/4">
                         <div>
