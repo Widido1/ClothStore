@@ -1,4 +1,5 @@
 "use client";
+import Link from "next/link";
 
 export default function Banner(){
     
@@ -8,8 +9,8 @@ export default function Banner(){
                 <h1>CozyBoys</h1>
             </div>
             <div className="grid grid-flow-col w-1/2 justify-self-end items-stretch theme3 text-xl">
-                <button>About</button>
-                <button>New Product</button>
+                <button><Link href="/about">About</Link></button>
+                <button><Link href="/new-product">New Product</Link></button>
                 <button>Log In</button>
             </div>
         </div>

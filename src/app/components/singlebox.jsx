@@ -5,13 +5,13 @@ import Link from "next/link";
 
 const imageStyle = {
     borderRadius: "25%",
-    width: "275px",
-    height: "275px",
+    width: "400px",
+    height: "400px",
     border: "3px solid #612c00"
 
 }
 
-export default function ProductBox(props) {
+export default function SingleBox(props) {
     const [pName, setpName] = useState(props.name);
     const [pImg, setpImg] = useState(props.img);
     const [pPrice, setpPrice] = useState(props.price);
@@ -25,9 +25,9 @@ export default function ProductBox(props) {
 
     return(
         <div className="flex-col justify-items-center text-center content-center space-y-10 rounded-md theme1 pb-6">
-            <Link href={`/products/${props.id}`} className="font-bold text-lg italic theme2">
+            <h1 className="font-bold text-lg italic theme2">
                 {pName}
-            </Link>
+            </h1>
             <div className="w-11/12 align-middle p-auto mx-auto relative">
 
                 <Image 
