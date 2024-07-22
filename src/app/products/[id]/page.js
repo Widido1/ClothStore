@@ -22,7 +22,7 @@ export default async function ProductPage({params}){
                 <SingleBox key={product.id} id={product.id} name={product.name} img={product.img} des={product.description} price={product.price}/>
                 <div>
                     <button className="block theme2 w-full h-8">Edit</button>
-                    <DeleteButton/>
+                    <DeleteButton id={params.id}/>
                     
                 </div>
             </div>
