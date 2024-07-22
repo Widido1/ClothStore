@@ -24,7 +24,7 @@ export default function SingleBox(props) {
 
 
     return(
-        <div className="flex-col justify-items-center text-center content-center space-y-10 rounded-md theme1 pb-6">
+        <div className="flex-col justify-items-center text-center content-center space-y-10 theme1 pb-6">
             <h1 className="font-bold text-lg italic theme2">
                 {pName}
             </h1>

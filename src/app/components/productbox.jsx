@@ -25,9 +25,9 @@ export default function ProductBox(props) {
 
     return(
         <div className="flex-col justify-items-center text-center content-center space-y-10 rounded-md theme1 pb-6">
-            <Link href={`/products/${props.id}`} className="font-bold text-lg italic theme2">
+            <h1 className="Link font-bold text-lg italic theme2"><Link href={`/products/${props.id}`}>
                 {pName}
-            </Link>
+            </Link></h1>
             <div className="w-11/12 align-middle p-auto mx-auto relative">
 
                 <Image 

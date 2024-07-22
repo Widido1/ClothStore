@@ -6,7 +6,7 @@ const imageStyle = {
     borderRadius: "100%",
     width: "50px",
     height: "50px",
-    border: "1px solid #007396" ,
+    border: "1px solid #007396" ,  
 
 }
 
