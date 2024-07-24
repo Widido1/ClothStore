@@ -1,6 +1,7 @@
 import Github from "../components/github";
 import Linkedin from "../components/linkedin";
 import Link from "next/link";
+
 export default function About(){
     return(
         <div className="grid h-screen">
