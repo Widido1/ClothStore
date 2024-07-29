@@ -6,11 +6,11 @@ export default function About(){
     return(
         <div className="grid h-screen">
             <div>
-                <h1 className="theme2 block text-9xl text-center font-bold"><Link href="/">CozyBoys</Link></h1>
+                <h1 className="theme2 block text-center font-bold text-7xl sm:text-8xl lg:text-9xl"><Link href="/">CozyBoys</Link></h1>
             </div>
             
             <div className="grid items-stretch">
-                <p className="theme3 text-center text-3xl w-3/4 mx-auto">
+                <p className="theme3 text-center w-3/4 mx-auto text-xl sm:text-2xl md:text-3xl xl:text-4xl">
                     We are CozyBoys, the best fictional cloth market, we born as a mean of a coding proyect, all our products are fake and our images
                     are collected from pinterest because we lack of a real cloth database or images, my objective with this farse was to practice Next.js 
                     and the use of Prisma database for the creation of a web store, i really like to design web pages and i believe that this was a good
