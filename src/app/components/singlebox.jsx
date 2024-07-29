@@ -25,7 +25,7 @@ export default function SingleBox(props) {
 
     return(
         <div className="flex-col justify-items-center text-center content-center space-y-10 theme1 pb-6">
-            <h1 className="font-bold text-lg italic theme2">
+            <h1 className="font-bold text-lg sm:text-xl italic theme2">
                 {pName}
             </h1>
             <div className="w-11/12 align-middle p-auto mx-auto relative">
@@ -35,13 +35,13 @@ export default function SingleBox(props) {
                     alt="buzo selección"
                     width={300}
                     height={300}
-                    className="h-1/2 w-1/2 mx-auto rounded-md"
+                    className="mx-auto rounded-[20%] w-[400px] h-[400px] lg:w-[450px] lg:h-[450px] xl:w-[500px] xl:h-[500px]"
                     //fill={true}
-                    style={imageStyle}
+                    //style={imageStyle}
                 />
-                <p className="font-bold text-md">{props.des}</p>
+                <p className="font-bold text-lg">{props.des}</p>
                 <div>
-                    <h1 className="theme2 w-3/4 mx-auto rounded-md">{props.price}</h1>
+                    <h1 className="theme2 w-3/4 mx-auto rounded-md text-lg">{props.price}</h1>
                 </div>
             </div>
             

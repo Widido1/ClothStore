@@ -16,14 +16,14 @@ export default async function ProductPage({params}){
     })
 
     return(
-        <div>
+        <div className="OneProduct h-screen">
             <Banner/>
             <Toaster toastOptions={{unstyled:true, duration:Infinity,}} position="bottom-center" visibleToasts={1} closeButton=""/>
-            <div className="flex justify-center items-center h-screen">
+            <div className="flex justify-center items-center h-[95vh]">
                 <div className="grid justify-center items-center">
                     <SingleBox key={product.id} id={product.id} name={product.name} img={product.img} des={product.description} price={product.price}/>
                     <div>
-                        <button className="block theme2 w-full h-8"><Link href={`/products/${params.id}/edit`}>Edit</Link></button>
+                        <button className="block theme2 w-full h-8 sm:text-xl"><Link href={`/products/${params.id}/edit`}>Edit</Link></button>
                         <DeleteButton id={params.id}/>
                     </div>
                 </div>

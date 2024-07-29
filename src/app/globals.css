@@ -21,6 +21,9 @@ Image {
 button:hover{
   color:rgb(233, 105, 0);
 }
+.OneProduct{
+  background-color: rgb(37, 33, 33);
+}
 
 .Link:hover{
   color:rgb(233, 105, 0);
