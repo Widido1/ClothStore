@@ -3,13 +3,7 @@ import Image from "next/image";
 import { useEffect, useState } from "react";
 import Link from "next/link";
 
-const imageStyle = {
-    borderRadius: "25%",
-    width: "250px",
-    height: "250px",
-    border: "3px solid #612c00",
-
-}
+// ProductBox is for the main page, the one where we can see all the products
 
 export default function ProductBox(props) {
     const [pName, setpName] = useState(props.name);

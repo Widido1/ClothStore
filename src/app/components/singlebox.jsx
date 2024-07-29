@@ -1,15 +1,8 @@
 "use client";
 import Image from "next/image";
 import { useEffect, useState } from "react";
-import Link from "next/link";
 
-const imageStyle = {
-    borderRadius: "25%",
-    width: "400px",
-    height: "400px",
-    border: "3px solid #612c00"
-
-}
+// Singlebox is for the page for each individual product, this is why i preferr to have two differents products components
 
 export default function SingleBox(props) {
     const [pName, setpName] = useState(props.name);
