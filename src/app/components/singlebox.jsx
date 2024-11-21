@@ -17,8 +17,8 @@ export default function SingleBox(props) {
 
 
     return(
-        <div className="flex-col justify-items-center text-center content-center space-y-10 theme1 pb-6">
-            <h1 className="font-bold text-lg sm:text-xl italic theme2">
+        <div className="flex-col rounded-md justify-items-center text-center content-center space-y-6 min-[350px]:space-y-10 theme2 pb-3 min-[350px]:pb-6">
+            <h1 className="w-full rounded-t-md font-bold text-lg sm:text-xl italic theme3">
                 {pName}
             </h1>
             <div className="w-11/12 align-middle p-auto mx-auto relative">
@@ -28,13 +28,13 @@ export default function SingleBox(props) {
                     alt="buzo selección"
                     width={300}
                     height={300}
-                    className="mx-auto rounded-[20%] w-[400px] h-[400px] lg:w-[450px] lg:h-[450px] xl:w-[500px] xl:h-[500px]"
+                    className="mx-auto rounded-[20%] w-[240px] h-[240px] min-[350px]:w-[350px] min-[350px]:h-[350px] min-[450px]:w-[450px] min-[450px]:h-[450px] xl:w-[500px] xl:h-[500px]"
                     //fill={true}
                     //style={imageStyle}
                 />
-                <p className="font-bold text-lg">{props.des}</p>
+                <p className="font-bold text-sm min-[350px]:text-lg">{props.des}</p>
                 <div>
-                    <h1 className="theme2 w-3/4 mx-auto rounded-md text-lg">{props.price}</h1>
+                    <h1 className="theme3 w-3/4 mx-auto rounded-md text-sm min-[350px]:text-lg">{props.price}</h1>
                 </div>
             </div>
             

@@ -7,28 +7,42 @@ Image {
 }
 
 .theme1{
-  background-color: #f8ca8e;
-  color: rgb(97, 44, 0);
+  background: linear-gradient(180deg,#995925, #6e3c1b,#2e170d);
+  color: #ffe0b7;
 }
 .theme2{
-  background-color: #612c00;
-  color: rgb(248, 202, 142);
+  background: linear-gradient(180deg, #e4ad65 , #b3672a ,#2e170d ), url(images/wood.png); 
+  color: #ffe0b7;
+  background-blend-mode: multiply;
 }
 .theme3{
-  background-color: rgb(54, 18, 9);
-  color: rgb(248, 202, 142);
+  background: linear-gradient(180deg,#cf7d3a, #6e3c1b,#2e170d);
+  color: #ffe0b7;
 }
 button:hover{
-  color:rgb(233, 105, 0);
-}
-.OneProduct{
-  background-color: rgb(37, 33, 33);
+  background: linear-gradient(180deg, #b4884f , #995925 ,#2e170d );
 }
 
 .Link:hover{
-  color:rgb(233, 105, 0);
+  background: linear-gradient(180deg, #b4884f , #995925 ,#2e170d );
+
+}
+.formbox{
+  color: #221000;
+  background-color:#ffe0b7;
 }
 
 body{
-  background-color:rgb(54, 18, 9);
+  background-color: #2e170d;
+  background-image: 
+    linear-gradient(-45deg, transparent 75%, #5c381b 50%), 
+    linear-gradient(45deg, transparent 75%, #5c381b 50%), 
+    linear-gradient(-135deg, transparent 75%, #5c381b 50%), 
+    linear-gradient(135deg, transparent 75%, #5c381b 50%);
+  background-size: 4rem 4rem;
+}
+
+.cardbackground{
+  color: white;
+  background: url(images/wood.png);
 }

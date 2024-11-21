@@ -7,7 +7,7 @@ export default function DeleteButton(id){
     const router = useRouter();
 
     return(
-        <button className="block theme2 w-full h-8 sm:text-xl" onClick={(event) => {
+        <button className="block theme3 rounded-b-md w-full h-5 text-sm min-[350px]:h-6 min-[350px]:text-lg sm:h-8 sm:text-xl" onClick={(event) => {
             event.preventDefault();
             toast.custom((t) => ( 
                 <div className="theme1 w-full p-4 rounded-md">

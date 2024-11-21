@@ -18,8 +18,8 @@ export default function ProductBox(props) {
 
 
     return(
-        <div className="flex-col justify-items-center text-center content-center space-y-10 rounded-md theme1 pb-6">
-            <h1 className="Link font-bold italic theme2 text-md md:text-lg xl:text-xl"><Link href={`/products/${props.id}`}>
+        <div className="theme2 flex-col justify-items-center text-center content-center space-y-10 rounded-md theme1 pb-6">
+            <h1 className="Link rounded-t-md w-full font-bold italic theme3 text-md md:text-lg xl:text-xl"><Link href={`/products/${props.id}`}>
                 {pName}
             </Link></h1>
             <div className="w-11/12 align-middle p-auto mx-auto relative">
@@ -35,7 +35,7 @@ export default function ProductBox(props) {
                 />
                 <p className="font-bold text-md">{props.des}</p>
                 <div>
-                    <h1 className="theme2 w-3/4 mx-auto rounded-md">{props.price}</h1>
+                    <h1 className="theme3 w-3/4 mx-auto rounded-md">{props.price}</h1>
                 </div>
             </div>
             
