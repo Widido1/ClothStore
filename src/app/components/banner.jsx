@@ -3,14 +3,8 @@ import { LoginLink, LogoutLink, useKindeBrowserClient } from "@kinde-oss/kinde-a
 import Link from "next/link";
 import Image from "next/image";
 
-const imageStyle = {
-    borderRadius: '50%',
-    width: "200px",
-
-}
 
 export default function Banner(){
-    //pathname
     const {user, isAuthenticated, getPermission} = useKindeBrowserClient();
     const requiredPermission = getPermission("add:products");
     
@@ -23,6 +17,7 @@ export default function Banner(){
             <div className="grid grid-flow-col gap-2 min-[270px]:gap-4 auto-cols-3 place-self-center justify-self-center sm:justify-self-end justify-end text-right h-auto
             text-sm sm:text-base sm:w-2/3 md:text-lg lg:text-xl">
                 <button className="p-2"><Link href="/about">About</Link></button>
+                {/*Esta logica renderiza acorde a si el usuario esta autenticado y que permisos tiene*/}
                 
                 {requiredPermission.isGranted && (
                     <button className="p-2"><Link href="/new-product">New Product</Link></button>

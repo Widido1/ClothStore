@@ -8,6 +8,8 @@ export default function Form({product}) {
     const router = useRouter();
 
     const act = product?.id ? updateProduct : addProduct;
+    //act determina la accion, si encuentra el id en el formulario, actualiza el producto modificado con el action updateProduct, sino encuentra la id en el formulario,
+    //agrega el nuevo producto a la base de datos usando el server action addProduct, el chiste es que el mismo formulario lo usamos para editar o para añadir un nuevo producto.
 
     return(
         <div className="h-screen" >
@@ -16,8 +18,8 @@ export default function Form({product}) {
             </div>
             <form className="container grid grid-cols-1 w-[220px] min-[365px]:w-[350px] min-[665px]:w-[600px] justify-self-center p-6 mx-auto my-6 h-7/8 text-center rounded-md theme2" action={
                 async formData =>{
-                    await act(formData);
-                    router.push("/");
+                    await act(formData); //espera a que se actualize la base de datos usando act y los datos del formulario.
+                    router.push("/"); // luego de que terminó de actualizar la base de datos, envía al usuario a la pagina de inicio
                 }}
             >
                 <div className="container grid grid-cols-1">
@@ -51,6 +53,7 @@ export default function Form({product}) {
 
                 <div className="grid grid-cols-2">
                     <button type="submit" className="w-3/4 mx-auto theme3 h-10 rounded-md py-1 text-md min-[365px]:text-xl min-[455px]:text-2xl">Submit</button>
+                    {/* el botón submit crea el archivo formData con la informacion del formulario, esto activa el action del form que actualiza la base de datos*/}
                     <Link href="/"><button className="w-3/4 mx-auto theme3 h-10 rounded-md py-1 text-md min-[365px]:text-xl min-[455px]:text-2xl">Cancel</button></Link>
                 </div>
             </form>

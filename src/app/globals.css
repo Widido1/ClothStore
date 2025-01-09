@@ -2,16 +2,24 @@
 @tailwind components;
 @tailwind utilities;
 
-Image {
-  width: 600px;
+*{
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
+
+root{
+  --width: 500px;
+}
+
+/*Color themes*/
 
 .theme1{
   background: linear-gradient(180deg,#995925, #6e3c1b,#2e170d);
   color: #ffe0b7;
 }
 .theme2{
-  background: linear-gradient(180deg, #e4ad65 , #b3672a ,#2e170d ), url(images/wood.png); 
+  background-image: linear-gradient(180deg, #e4ad65 , #b3672a ,#2e170d ), url(images/wood.png); 
   color: #ffe0b7;
   background-blend-mode: multiply;
 }
@@ -19,20 +27,72 @@ Image {
   background: linear-gradient(180deg,#cf7d3a, #6e3c1b,#2e170d);
   color: #ffe0b7;
 }
+
+/*Hover effects*/
+
 button:hover{
   background: linear-gradient(180deg, #b4884f , #995925 ,#2e170d );
 }
 
 .Link:hover{
   background: linear-gradient(180deg, #b4884f , #995925 ,#2e170d );
+}
 
+/*ProductBox color Hover effect*/
+
+.ProductBox{
+  position: relative;
+  z-index: 2;
 }
-.formbox{
-  color: #221000;
-  background-color:#ffe0b7;
+.Slider{
+  z-index: 1;
 }
+@property --angle{
+  syntax: "<angle>";
+  initial-value: 0deg;
+  inherits: false;
+}
+@keyframes spin{
+  from{
+    --angle: 0deg;
+  }to{
+    --angle: 360deg;
+  }
+}
+
+.rainbow{
+  content: "";
+  padding: 3px;
+
+  border-radius: 6px;
+  z-index: -2;
+}
+
+.rainbow:hover{
+  --angle: 0deg;
+  transform: translateY(-10px);
+  background-image: 
+  conic-gradient(
+    from var(--angle),
+    rgb(0, 55, 80),
+    rgb(0, 87, 53) 13%,
+    rgb(0, 55, 80) 25%,
+    rgb(0, 87, 53) 37%,
+    rgb(0, 55, 80) 50%,
+    rgb(0, 87, 53) 62%,
+    rgb(0, 55, 80) 75%,
+    rgb(0, 87, 53) 87%,
+    rgb(0, 55, 80)
+  );
+  animation: 2s spin linear infinite;
+}
+
+
+
+/*Other CSS*/
 
 body{
+  min-height: 100vh;
   background-color: #2e170d;
   background-image: 
     linear-gradient(-45deg, transparent 75%, #5c381b 50%), 
@@ -40,9 +100,20 @@ body{
     linear-gradient(-135deg, transparent 75%, #5c381b 50%), 
     linear-gradient(135deg, transparent 75%, #5c381b 50%);
   background-size: 4rem 4rem;
+  z-index: 1;
+}
+
+Image {
+  width: 600px;
+}
+
+.formbox{
+  color: #221000;
+  background-color:#ffe0b7;
 }
 
 .cardbackground{
   color: white;
   background: url(images/wood.png);
 }
+
