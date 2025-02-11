@@ -1,6 +1,6 @@
 "use client"
 import ProductBox from "./productbox";
-import {useEffect, useState, useRef} from "react";
+import {useState} from "react";
 
 function makeArr(objArr){
     const arr = objArr.map((x,i) => (
@@ -36,8 +36,8 @@ export default function Slider(props){
     return(
         <div className="Slider mx-auto mt-2 gap-[20px] w-[250px] min-[400px]:w-[400px] min-[650px]:w-[650px] lg:w-[900px] xl:w-[1200px] px-4 pb-2 bg-stone-950 bg-opacity-50">         
             <div className="ButtonBox grid grid-flow-col place-content-center gap-1 px-4 pb-2">
-                <button className="ButtonPrev theme1 rounded-md text-xl lg:text-3xl h-[30px] lg:h-[40px] px-10 w-[125px] min-[400px]:w-[200px] min-[650px]:w-[325px] lg:w-[450px] xl:w-[600px]" onClick={PrevF}>{"<"}</button>
-                <button className="ButtonNext theme1 rounded-md text-xl lg:text-3xl h-[30px] lg:h-[40px] px-10 w-[125px] min-[400px]:w-[200px] min-[650px]:w-[325px] lg:w-[450px] xl:w-[600px]" onClick={NextF}>{">"}</button>
+                <button className="ButtonPrev theme1 ButtonH Shine BoxShine rounded-md text-xl lg:text-3xl h-[30px] lg:h-[40px] px-10 w-[125px] min-[400px]:w-[200px] min-[650px]:w-[325px] lg:w-[450px] xl:w-[600px]" onClick={PrevF}>{"<"}</button>
+                <button className="ButtonNext theme1 ButtonH Shine BoxShine rounded-md text-xl lg:text-3xl h-[30px] lg:h-[40px] px-10 w-[125px] min-[400px]:w-[200px] min-[650px]:w-[325px] lg:w-[450px] xl:w-[600px]" onClick={NextF}>{">"}</button>
             </div>
             <div className="SliderWrapper flex flex-col min-[650px]:flex-row">
                 <div>{cArray[detI(mI)]}</div>

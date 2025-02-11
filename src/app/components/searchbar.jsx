@@ -16,8 +16,10 @@ export default function SearchBar(props){
     return(
         <div className="grid grid-flow-col self-center place-self-center py-4 min-[400px]:py-6 min-[650px]:py-8 w-[85%]">
             <input value={searchW} onChange={change} className="rounded-full bg-stone-950 bg-opacity-80 placeholder-orange-200 text-orange-200
-               w-full h-[60px] px-4 min-[340px]:px-8 text-sm min-[340px]:text-lg" placeholder="Search for a product..."/>
-            <Link className="grid place-self-end absolute" href={`/search/${searchW}`}><button className="rounded-full w-[60px] h-[60px] theme1 ">S</button></Link>
+               w-full h-[40px] min-[290px]:h-[60px] px-4 min-[340px]:px-8 text-sm min-[340px]:text-lg" placeholder="Search for a product..."/>
+            <Link className="grid place-self-end absolute" href={
+                searchW !== "" ? (`/search/${searchW}`):("/search/empty")    
+            }><button className="ButtonH BoxShine Shine rounded-full w-[40px] min-[290px]:w-[60px] h-[40px] min-[290px]:h-[60px] theme1 ">S</button></Link>
         </div>
     )
 }

@@ -11,7 +11,7 @@ export default function ProductBox(props) {
     return(
         <div className="rainbow">
             <div className="theme2 ProductBox flex-col justify-items-center text-center content-center space-y-4 rounded-md theme1 pb-4">
-                <h1 className="Link rounded-t-md w-full font-bold italic theme3 text-md md:text-lg xl:text-xl"><Link href={`/products/${props.id}`}>{/*<-- routing dinamico*/}
+                <h1 className="ButtonH rounded-t-md w-full font-bold italic theme3 text-md md:text-lg xl:text-xl"><Link href={`/products/${props.id}`}>{/*<-- routing dinamico*/}
                 {pName}
                 </Link></h1>
                 <div className="w-11/12 align-middle mx-auto relative">

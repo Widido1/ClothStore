@@ -18,6 +18,6 @@ export default function BuyButton(props){
     }
 
     return(
-        <button className="block theme3 rounded-md w-full h-6 text-sm min-[350px]:h-8 min-[350px]:text-lg sm:text-xl" onClick={handlePay}>Buy</button>
+        <button className="block theme3 ButtonH rounded-md w-full h-6 text-sm min-[350px]:h-8 min-[350px]:text-lg sm:text-xl" onClick={handlePay}>Buy</button>
     );
 }

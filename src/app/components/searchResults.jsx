@@ -12,9 +12,9 @@ export default function SearchResults(props){
 
     const purgeSearch = () => {
         let purged = searchW.toLowerCase(); //pasa la palabra de busqueda a minisculas, para que las mayusculas no entorpezcan la busqueda
-        let borrar = /2%/; // crea un regEx /%2/ para reemplazar ese valor por un espacio tradicional
+        let borrar = /%20/; // crea un regEx /%2/ para reemplazar ese valor por un espacio tradicional
         if(borrar.test(purged)){
-            purged = purged.split("2%").join(" "); //separa el string cada vez que hay un 2% formando un arreglo, luego lo vuelve a unir entre " " con join()
+            purged = purged.split("%20").join(" "); //separa el string cada vez que hay un 2% formando un arreglo, luego lo vuelve a unir entre " " con join()
         }
         return purged
     }
@@ -33,6 +33,7 @@ export default function SearchResults(props){
     useEffect(()=>{
         const purged = purgeSearch(searchW); //purgueSearch se encarga de purgar la palabra de busqueda para evitar errores como 2% o mayusculas
         setResults(findResults(purged)); //arma el arreglo con los resultados de la busqueda
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     },[])
 
     return(
@@ -42,11 +43,21 @@ export default function SearchResults(props){
                 <SearchBar/>
             </div>
             <div className="grid grid-cols-1 gap-4 min-[420px]:grid-cols-2 min-[650px]:grid-cols-3">
-                {results.map((x, i) => (
-                    <div>
-                        <ProductBox key={i} id={x.id} name={x.name} img={x.img} des={x.description} price={x.price}/>
-                    </div>
-                ))}
+                {
+                    searchW === "empty" ? (
+                        allProducts.map((x, i) => (
+                            <div key={i}>
+                                <ProductBox id={x.id} name={x.name} img={x.img} des={x.description} price={x.price}/>
+                            </div>
+                        ))
+                    ):(
+                        results.map((x, i) => (
+                            <div key={i}>
+                                <ProductBox id={x.id} name={x.name} img={x.img} des={x.description} price={x.price}/>
+                            </div>
+                        ))
+                    )
+                }
             </div>
         </div>
     );

@@ -38,7 +38,7 @@ export default async function ProductPage({params}){
                     <BuyButton product={product}/>
                     {requiredPermission.isGranted && (
                         <div className="grid grid-cols-2">
-                            <button className="block theme3 rounded-md w-full h-6 text-sm min-[350px]:h-8 min-[350px]:text-lg sm:text-xl"><Link href={`/products/${params.id}/edit`}>Edit</Link></button>
+                            <button className="block theme3 ButtonH rounded-md w-full h-6 text-sm min-[350px]:h-8 min-[350px]:text-lg sm:text-xl"><Link href={`/products/${params.id}/edit`}>Edit</Link></button>
                             <DeleteButton id={params.id}/>
                         </div>
                     )}
